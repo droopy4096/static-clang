@@ -1,8 +1,12 @@
 FROM ubuntu
-RUN apt-get update && apt-get install -y ca-certificates curl git python3 binutils zstd file
-RUN curl -L https://github.com/bazelbuild/bazelisk/releases/download/v1.18.0/bazelisk-linux-amd64 -o /usr/bin/bazel && chmod +x /usr/bin/bazel
+RUN apt-get update \
+  && apt-get install -y ca-certificates curl git python3 binutils zstd file
+RUN curl -L https://github.com/bazelbuild/bazelisk/releases/download/v1.18.0/bazelisk-linux-amd64 -o /usr/bin/bazel \
+  && chmod +x /usr/bin/bazel
+RUN mkdir -p /static-clang
 
 RUN adduser fakeuser
+RUN chown fakeuser /static-clang
 USER fakeuser
 
 WORKDIR /static-clang

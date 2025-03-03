@@ -2,13 +2,14 @@ common --dynamic_mode=off
 # Upstream builds PIE, but it doesn't have much benefit when fully statically linked.
 #common --force_pic
 
-common --bes_results_url=https://app.buildbuddy.io/invocation/
-common --bes_backend=grpcs://remote.buildbuddy.io
-common --remote_cache=grpcs://remote.buildbuddy.io
-common --remote_download_toplevel
+#XXX common --bes_results_url=https://app.buildbuddy.io/invocation/
+#XXX common --bes_backend=grpcs://remote.buildbuddy.io
+#XXX common --remote_cache=grpcs://remote.buildbuddy.io
+
+#XXX common --remote_download_toplevel
 common --nobuild_runfile_links
 common --remote_timeout=3600
-common --remote_executor=grpcs://remote.buildbuddy.io
+#XXX common --remote_executor=grpcs://remote.buildbuddy.io
 common --noexperimental_throttle_remote_action_building
 common --jobs=800
 
